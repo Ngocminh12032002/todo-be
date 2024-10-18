@@ -1,4 +1,4 @@
-import { Controller, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Post, Put, Delete, Body, Param, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Task } from './entity/task';
 
@@ -19,5 +19,10 @@ export class AppController {
   @Delete(':id')
   remove(@Param('id') id: number): Promise<void> {
     return this.appService.remove(id);
+  }
+
+  @Get()
+  findAll(): Promise<Task[]> {
+    return this.appService.getAll();
   }
 }

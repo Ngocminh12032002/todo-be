@@ -22,4 +22,8 @@ export class AppService {
   async remove(id: number): Promise<void> {
     await this.taskRepository.delete(id);
   }
+
+  async getAll(): Promise<Task[]> {
+    return this.taskRepository.find();
+  }
 }
