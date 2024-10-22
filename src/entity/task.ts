@@ -8,6 +8,6 @@ export class Task {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ default: false })
   complete: boolean;
 }

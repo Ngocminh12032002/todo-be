@@ -8,6 +8,7 @@ export class AppController {
 
   @Post()
   create(@Body() task: Task): Promise<Task> {
+    console.log("DAng them")
     return this.appService.create(task);
   }
 
@@ -23,6 +24,7 @@ export class AppController {
 
   @Get()
   findAll(): Promise<Task[]> {
+    console.log("get all")
     return this.appService.getAll();
   }
 }
